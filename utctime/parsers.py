@@ -1,5 +1,5 @@
-
 import re
+import dateutil.parser
 from bs4 import BeautifulSoup
 
 def from_requests_response(response):
@@ -20,22 +20,9 @@ def from_requests_response(response):
     if modified_date:
         return modified_date
 
-def parse_http_date(date):
-    if 'GMT' in date:
-        # 'Thu, 15 Aug 2013 06:15:09 GMT'
-        # remove the GMT part
-        format = '%a, %d %b %Y %H:%M:%S GMT'
-    elif '+' in date:
-        # 'Wed, 21 Aug 2013 06:25:12 +0000'
-        # utc
-        date = re.sub(r'\+\d+', '', date).strip()
-        format = '%a, %d %b %Y %H:%M:%S'
-    date = datetime.datetime.strptime(date, format)
-    return date
-
 def from_headers(response):
     if 'last-modified' in response.headers:
-        date = parse_http_date(response.headers['last-modified'])
+        date = dateutil.parser.parse(response.headers['last-modified'])
         return date
     return None
 
