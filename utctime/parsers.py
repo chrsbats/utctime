@@ -27,7 +27,6 @@ def from_headers(response):
     return None
 
 def from_url(url):
-
     # allow the year to go +1 incase we're on new years eve
     # and dealing with timezones
     max_year = datetime.date.today().year + 1
@@ -110,9 +109,7 @@ def parse_month(month):
     }[month.lower()]
 
 def from_content(content):   
-
     def calculate_time(hour, minute, second, am_pm):
-        
         try:
             if not hour:
                 return None
@@ -233,4 +230,3 @@ def from_content(content):
                     return datetime.datetime(date.year, date.month, date.day)
 
     return None
-
