@@ -5,8 +5,6 @@ UTC Time
 Convert your time stamps and stay in UTC.
 Grab UTC time from web requests and web pages.
 
-Built for Python 2.x
-
 
 Motivation
 ==========
@@ -14,6 +12,21 @@ Motivation
 Time in python is a pain point.  Time functions are spread around numerous libraries.  Converting from one format to another can often change the timezone.  This utility library provides a bunch of converters in one spot that ensure the time stays in UTC.
 
 Getting an accurate timestamp from a web page can also be tricky.  This library parses request headers and request content to get a timestamp in UTC if possible.
+
+
+Requirements
+============
+
+python 2.7
+beautifulsoup 4.3.2
+python-dateutil 2.4.2
+requests 2.7.0
+six 1.9.0
+
+Status
+======
+
+Work in progress.  
 
 
 Examples
