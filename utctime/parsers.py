@@ -1,4 +1,5 @@
 import re
+import datetime
 import dateutil.parser
 from bs4 import BeautifulSoup
 
@@ -108,7 +109,7 @@ def parse_month(month):
         'december':     12,
     }[month.lower()]
 
-def from_content(content):   
+def from_content(content):
     def calculate_time(hour, minute, second, am_pm):
         try:
             if not hour:
