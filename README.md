@@ -13,11 +13,11 @@ Getting an accurate timestamp from a web page can also be tricky.  This library 
 
 ## Requirements
 
-python 2.7
-beautifulsoup 4.3.2
-python-dateutil 2.4.2
-requests 2.7.0
-six 1.9.0
+* python 2.7
+* beautifulsoup 4.3.2
+* python-dateutil 2.4.2
+* requests 2.7.0
+* six 1.9.0
 
 ## Status
 
